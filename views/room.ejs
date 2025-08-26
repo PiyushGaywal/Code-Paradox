@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Code-Paradox • Room</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <link rel="stylesheet" href="/room.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.15/codemirror.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.15/theme/dracula.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.15/addon/hint/show-hint.min.css">
+</head>
+<body>
+  <div class="app">
+    <aside class="activity">
+      <div class="activity-actions">
+        <button id="btnCopyLink" title="Copy room link">🔗</button>
+      </div>
+    </aside>
+
+    <aside class="sidebar">
+      <div class="sidebar-header">
+        <div>
+          <strong>Room</strong>
+          <div  id="roomId"  class="room-id"></div>
+        </div>
+      </div>
+      <div class="users-list" id="usersList"></div>
+    </aside>
+
+    <main class="editor-area">
+      <header class="editor-top">
+        <div id="tabs" class="tabs">Shared.js</div>
+        <div class="editor-controls">
+          <button id="runBtn" class="btn run">▶ Run</button>
+          <button id="clearBtn" class="btn ghost">Clear</button>
+        </div>
+      </header>
+
+      <div id="editor" class="editor"></div>
+
+      <div class="console">
+        <div class="console-header"><strong>Console</strong></div>
+        <pre id="output" class="console-body"></pre>
+      </div>
+    </main>
+  </div>
+
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.15/codemirror.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.15/mode/javascript/javascript.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.15/addon/edit/closebrackets.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.15/addon/edit/matchbrackets.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.15/addon/hint/show-hint.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.15/addon/hint/javascript-hint.min.js"></script>
+  <script src="/utils/room.js"></script>
+</body>
+</html>

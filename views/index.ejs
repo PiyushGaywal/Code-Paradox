@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>CodeCast — Join or Create Room</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <main class="landing">
+    <div class="card">
+      <h1 id="heading">Code-Paradox</h1>
+      <p>Collaborative JS editor — create a room or join by Room ID</p>
+      <label>
+        Your Name :-
+        <input id="nameInput" placeholder="Your name" required/>
+      </label>
+      <label>
+        Room ID (optional) :-
+        <input id="roomInput" placeholder="Paste room id or leave empty" />
+      </label>
+      <div class="actions">
+        <button id="createBtn">Create Room</button>
+        <button id="joinBtn">Join Room</button>
+  </main>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/uuid/9.0.0/uuidv4.min.js"></script>
+  <script src="/utils/client.js"></script>
+</body>
+</html>
