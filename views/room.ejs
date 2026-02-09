@@ -4,13 +4,18 @@
   <meta charset="utf-8" />
   <title>Code-Paradox • Room</title>
   <meta name="viewport" content="width=device-width,initial-scale=1" />
+
   <link rel="stylesheet" href="/room.css">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.15/theme/eclipse.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.15/codemirror.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.15/theme/dracula.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.15/addon/hint/show-hint.min.css">
 </head>
+
 <body>
   <div class="app">
+
     <aside class="activity">
       <div class="activity-actions">
         <button id="btnCopyLink" title="Copy room link">🔗</button>
@@ -21,19 +26,28 @@
       <div class="sidebar-header">
         <div>
           <strong>Room</strong>
-          <div  id="roomId"  class="room-id"></div>
+          <div id="roomId" class="room-id"></div>
         </div>
       </div>
+
       <div class="users-list" id="usersList"></div>
+      <div id="adminPanel" style="padding:12px; display:none;">
+        <div style="font-weight:700; margin-bottom:6px;">Admin Controls</div>
+        <div id="permissionPanel"></div>
+      </div>
     </aside>
 
     <main class="editor-area">
       <header class="editor-top">
         <div id="tabs" class="tabs">Shared.js</div>
-        <div class="editor-controls">
-          <button id="runBtn" class="btn run">▶ Run</button>
-          <button id="clearBtn" class="btn ghost">Clear</button>
-        </div>
+        <div id="typingStatus" style="font-size:12px; opacity:0.85; padding:4px 10px;"></div>
+
+  <div class="editor-controls">
+        <span id="userCount"  style="margin-right:8px;background:rgba(255, 255, 255, 0.06); color:#fff; font-size:17px;"></span>
+        <button id="runBtn" class="btn run">▶ Run</button>
+        <button id="clearBtn" class="btn ghost">Clear</button>
+  </div>
+
       </header>
 
       <div id="editor" class="editor"></div>
@@ -43,15 +57,19 @@
         <pre id="output" class="console-body"></pre>
       </div>
     </main>
+
   </div>
 
   <script src="/socket.io/socket.io.js"></script>
+
   <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.15/codemirror.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.15/mode/javascript/javascript.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.15/addon/edit/closebrackets.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.15/addon/edit/matchbrackets.min.js"></script>
+
   <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.15/addon/hint/show-hint.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.15/addon/hint/javascript-hint.min.js"></script>
+
   <script src="/utils/room.js"></script>
 </body>
 </html>
